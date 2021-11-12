@@ -105,10 +105,7 @@ std::string createTitle(mpd_song_t* song)
     const char* artist = mpd_song_get_tag(song, MPD_TAG_ARTIST, 0);
     
     if(artist)
-    {
-        stream << artist;
-        stream << " - ";
-    }
+        stream << artist << " - ";
     if(title)
         stream << title;
     else if(name)
@@ -127,7 +124,7 @@ std::string createArtist(mpd_song_t* song)
     
     const char* album = mpd_song_get_tag(song, MPD_TAG_ALBUM, 0);
     if(album)
-        stream << "Album: " << album;
+        stream << album;
     else
         stream << "Unknown";
     
